@@ -1,5 +1,5 @@
 class Translation(object):
-    START_TEXT = """This is an Mutli Purpose Bot
+    START_TEXT = """<b>This is an Mutli Purpose Bot</b>
     
     
     ┈┈┈••💙✿❤️✿💚••┈┈┈
