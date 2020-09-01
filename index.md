@@ -1,37 +1,44 @@
-## Welcome to GitHub Pages
+## URL Uploader Bot
+---
 
-You can use the [editor on GitHub](https://github.com/anananaanya/ammass/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+An Open Source ALL-In-One Telegram RoBot, that can do lot of things.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+**My Features**:
 
-### Markdown
+👉 All Supported Video Formats of https://rg3.github.io/youtube-dl/supportedsites.html
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+👉 Upload as file from any HTTP link
 
-```markdown
-Syntax highlighted code block
+### Installation
 
-# Header 1
-## Header 2
-### Header 3
+#### The Easy Way
 
-- Bulleted
-- List
+#### You can also tap the Deploy To Heroku button below to deploy straight to Heroku!
 
-1. Numbered
-2. List
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/TGExplore/TG-URL-Uploader/tree/master)
 
-**Bold** and _Italic_ and `Code` text
+**Watch our Video for Create own Bot** - 👉 
+#### The Hard Way
 
-[Link](url) and ![Image](src)
+```sh
+virtualenv -p python3 VENV
+. ./VENV/bin/activate
+pip install -r requirements.txt
+cp sample_config.py config.py
+--- EDIT config.py values appropriately ---
+python bot.py
 ```
+## Our Telegram Channel and Group
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+* [TG Bots Updates](https://telegram.dog/TGBotsz)
 
-### Jekyll Themes
+## Credits, and Thanks to
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/anananaanya/ammass/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+* [@SpEcHlDe](https://telegram.dog/ThankTelegram) for his [AnyDLBot](https://telegram.dog/AnyDLBot)
+* [Dan Tès](https://telegram.dog/haskell) for his [Pyrogram Library](https://github.com/pyrogram/pyrogram)
+* [Yoily](https://telegram.dog/YoilyL) for his [UploaditBot](https://telegram.dog/UploaditBot)
 
-### Support or Contact
+- For FeedBack and Suggestions, please feel free to say in [InFoTel Group](https://telegram.dog/InFoTelGroup)
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+#### LICENSE
+- GPLv3
