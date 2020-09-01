@@ -2,7 +2,7 @@ class Translation(object):
     START_TEXT = """This is an Mutli Purpose Bot
     
     
-     ┈┈┈••💙✿❤️✿💚••┈┈┈
+    ┈┈┈••💙✿❤️✿💚••┈┈┈
 AnyDLclone bot created by @shreevish
 
 For more updates☛ @myTestBotz"""
