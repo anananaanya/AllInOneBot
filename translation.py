@@ -1,14 +1,8 @@
 class Translation(object):
-    START_TEXT = """<b>This is an Mutli Purpose Bot</b>
-    
-    
-    ┈┈┈••💙✿❤️✿💚••┈┈┈
-AnyDLclone bot created by @shreevish
-
-For more updates☛ @myTestBotz"""
-    RENAME_403_ERR = "Sorry. You Are Not Permitted To Rename This File."
+    START_TEXT = """This is an Mutli Purpose Robot By @HB4All """
+    RENAME_403_ERR = "Sorry. You Are Not Permitted To Rename This File. \nAlternative Use This Bot @Renamer_Ro_Bot"
     ABS_TEXT = " Please Don't Be Selfish."
-    UPGRADE_TEXT = "Contact @shreevish"
+    UPGRADE_TEXT = "This is an For Free For Lifetime No Upgrade!"
     FORMAT_SELECTION = "Select the desired format: <a href='{}'>file size might be approximate</a> \nIf you want to set custom thumbnail, send photo before or quickly after tapping on any of the below buttons.\nYou can use /deletethumbnail to delete the auto-generated thumbnail."
     SET_CUSTOM_USERNAME_PASSWORD = """If you want to download premium videos, provide in the following format:
 URL | filename | username | password"""
@@ -16,11 +10,11 @@ URL | filename | username | password"""
     DOWNLOAD_START = "trying to download"
     UPLOAD_START = "trying to upload"
     RCHD_BOT_API_LIMIT = "size greater than maximum allowed size (50MB). Neverthless, trying to upload."
-    RCHD_TG_API_LIMIT = "Downloaded in {} seconds.\nDetected File Size: {}\nSorry. But, I cannot upload Files Greater Than 2.0 GB Due to Telegram API limitations."
+    RCHD_TG_API_LIMIT = "Downloaded in {} seconds.\nDetected File Size: {}\nSorry. But, I cannot upload Files Greater Than 1.5GB Due to Telegram API limitations. Use Public Leech Group @Public_Leech_1"
     AFTER_SUCCESSFUL_UPLOAD_MSG = "Follow Our Bots @HB4All_Bot"
     AFTER_SUCCESSFUL_UPLOAD_MSG_WITH_TS = "Downloaded in {} seconds. \nUploaded in {} seconds."
     NOT_AUTH_USER_TEXT = "@HB4All_Bot"
-    NOT_AUTH_USER_TEXT_FILE_SIZE = "Detected File Size: {}. Free Users can only upload: {}\nIf you Think This is a bug, please contact <a href='https://t.me/shreevish?start=true'>@shreevish</a>"
+    NOT_AUTH_USER_TEXT_FILE_SIZE = "Detected File Size: {}. Free Users can only upload: {}\nIf you Think This is a bug, please contact <a href='https://t.me/HB4All1_Bot?start=true'>@HB4All1_Bot</a>"
     SAVED_CUSTOM_THUMB_NAIL = "Custom video / file thumbnail saved. This image will be used in the video / file."
     DEL_ETED_CUSTOM_THUMB_NAIL = "✅ Custom thumbnail cleared succesfully."
     FF_MPEG_DEL_ETED_CUSTOM_MEDIA = "✅ Media cleared succesfully."
@@ -64,7 +58,7 @@ Send /me to know current plan details"""
     EXTRACT_ZIP_INTRO_ONE = "Send a compressed file first, Then reply /unzip command to the file."
     EXTRACT_ZIP_INTRO_THREE = "Analyzing received file. ⚠️ This might take some time. Please be patient. "
     UNZIP_SUPPORTED_EXTENSIONS = ("zip", "rar")
-    EXTRACT_ZIP_ERRS_OCCURED = "Sorry. Errors occurred while processing compressed file. Please check everything again twice, and if the issue persists, Report this to <a href='https://t.me/shreevish?start=true'>@shreevish</a>"
+    EXTRACT_ZIP_ERRS_OCCURED = "Sorry. Errors occurred while processing compressed file. Please check everything again twice, and if the issue persists, Report this to <a href='https://t.me/HB4All1_Bot?start=true'>@HB4All1_Bot</a>"
     EXTRACT_ZIP_STEP_TWO = """Select file_name to upload from the below options.
 You can use /rename command after receiving file to rename it with custom thumbnail support."""
     CANCEL_STR = "Process Cancelled"
@@ -72,10 +66,10 @@ You can use /rename command after receiving file to rename it with custom thumbn
     FREE_USER_LIMIT_Q_SZE = """Cannot Process.
 Free users only 1 request per 30 minutes.
 /upgrade or Try 1800 seconds later."""
-    SLOW_URL_DECED = "Gosh that Seems To BeA Very Slow URL. Since You Were Screwing My Home, I Am in No Mood To Download This File."
+    SLOW_URL_DECED = "Gosh that Seems To BeA Very Slow URL. Since You Were Screwing My Home, I Am in No Mood To Download This File. Meanwhile, Why Don't You Try This:==> https://t.me/HB4All_Bot?start=true And Get Me A Fast URL So that I can upload to Telegram, without me slowing down for other users."
     IFLONG_FILE_NAME = """File Name limit allowed by Telegram is {alimit} characters.
 The given file name has {num} characters.
 
 <b>Essays Not allowed in Telegram file name!</b>
-©️ <code>@shreevish</code>
+©️ <code>@Renamer_Ro_Bot</code>
 Please short your file name and try again!"""
