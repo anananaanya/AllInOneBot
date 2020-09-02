@@ -4,11 +4,9 @@
 
 # the logging things
 import logging
-logging.basicConfig(
-    level=logging.DEBUG, 
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-)
-LOGGER = logging.getLogger(__name__)
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
 import asyncio
 import aiohttp
@@ -19,12 +17,11 @@ import shutil
 import time
 from datetime import datetime
 
-from anydlbot import(
-        DOWNLOAD_LOCATION,
-        TG_MAX_FILE_SIZE,
-        PROCESS_MAX_TIMEOUT,
-        CHUNK_SIZE
-)
+# the secret configuration specific things
+if bool(os.environ.get("WEBHOOK", False)):
+    from sample_config import Config
+else:
+    from config import Config
 
 # the Strings used for this "thing"
 from translation import Translation
@@ -32,7 +29,8 @@ from translation import Translation
 import pyrogram
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
-from anydlbot.helper_funcs.display_progress import progress_for_pyrogram, humanbytes, TimeFormatter
+from helper_funcs.chat_base import TRChatBase
+from helper_funcs.display_progress import progress_for_pyrogram, humanbytes, TimeFormatter
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 # https://stackoverflow.com/a/37631799/4723940
@@ -40,11 +38,11 @@ from PIL import Image
 
 
 async def ddl_call_back(bot, update):
-    LOGGER.info(update)
+    logger.info(update)
     cb_data = update.data
     # youtube_dl extractors
     tg_send_type, youtube_dl_format, youtube_dl_ext = cb_data.split("=")
-    thumb_image_path = DOWNLOAD_LOCATION + \
+    thumb_image_path = Config.DOWNLOAD_LOCATION + \
         "/" + str(update.from_user.id) + ".jpg"
     youtube_dl_url = update.message.reply_to_message.text
     custom_file_name = os.path.basename(youtube_dl_url)
@@ -66,8 +64,8 @@ async def ddl_call_back(bot, update):
         if custom_file_name is not None:
             custom_file_name = custom_file_name.strip()
         # https://stackoverflow.com/a/761825/4723940
-        LOGGER.info(youtube_dl_url)
-        LOGGER.info(custom_file_name)
+        logger.info(youtube_dl_url)
+        logger.info(custom_file_name)
     else:
         for entity in update.message.reply_to_message.entities:
             if entity.type == "text_link":
@@ -83,7 +81,7 @@ async def ddl_call_back(bot, update):
         chat_id=update.message.chat.id,
         message_id=update.message.message_id
     )
-    tmp_directory_for_each_user = DOWNLOAD_LOCATION + "/" + str(update.from_user.id)
+    tmp_directory_for_each_user = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id)
     if not os.path.isdir(tmp_directory_for_each_user):
         os.makedirs(tmp_directory_for_each_user)
     download_directory = tmp_directory_for_each_user + "/" + custom_file_name
@@ -100,7 +98,7 @@ async def ddl_call_back(bot, update):
                 update.message.message_id,
                 c_time
             )
-        except asyncio.TimeoutError:
+        except asyncio.TimeOutError:
             await bot.edit_message_text(
                 text=Translation.SLOW_URL_DECED,
                 chat_id=update.message.chat.id,
@@ -114,14 +112,14 @@ async def ddl_call_back(bot, update):
             chat_id=update.message.chat.id,
             message_id=update.message.message_id
         )
-        file_size = TG_MAX_FILE_SIZE + 1
+        file_size = Config.TG_MAX_FILE_SIZE + 1
         try:
             file_size = os.stat(download_directory).st_size
         except FileNotFoundError as exc:
             download_directory = os.path.splitext(download_directory)[0] + "." + "mkv"
             # https://stackoverflow.com/a/678242/4723940
             file_size = os.stat(download_directory).st_size
-        if file_size > TG_MAX_FILE_SIZE:
+        if file_size > Config.TG_MAX_FILE_SIZE:
             await bot.edit_message_text(
                 chat_id=update.message.chat.id,
                 text=Translation.RCHD_TG_API_LIMIT,
@@ -235,7 +233,7 @@ async def ddl_call_back(bot, update):
                     )
                 )
             else:
-                LOGGER.info("Did this happen? :\\")
+                logger.info("Did this happen? :\\")
             end_two = datetime.now()
             try:
                 os.remove(download_directory)
@@ -262,7 +260,7 @@ async def ddl_call_back(bot, update):
 async def download_coroutine(bot, session, url, file_name, chat_id, message_id, start):
     downloaded = 0
     display_message = ""
-    async with session.get(url, timeout=PROCESS_MAX_TIMEOUT) as response:
+    async with session.get(url, timeout=Config.PROCESS_MAX_TIMEOUT) as response:
         total_length = int(response.headers["Content-Length"])
         content_type = response.headers["Content-Type"]
         if "text" in content_type and total_length < 500:
@@ -276,11 +274,11 @@ File Size: {}""".format(url, humanbytes(total_length))
         )
         with open(file_name, "wb") as f_handle:
             while True:
-                chunk = await response.content.read(CHUNK_SIZE)
+                chunk = await response.content.read(Config.CHUNK_SIZE)
                 if not chunk:
                     break
                 f_handle.write(chunk)
-                downloaded += CHUNK_SIZE
+                downloaded += Config.CHUNK_SIZE
                 now = time.time()
                 diff = now - start
                 if round(diff % 5.00) == 0 or downloaded == total_length:
@@ -295,8 +293,7 @@ File Size: {}""".format(url, humanbytes(total_length))
 URL: {}
 File Size: {}
 Downloaded: {}
-ETA: {}
-©️ @AnyDLBot""".format(
+ETA: {}""".format(
     url,
     humanbytes(total_length),
     humanbytes(downloaded),
@@ -310,6 +307,6 @@ ETA: {}
                             )
                             display_message = current_message
                     except Exception as e:
-                        LOGGER.info(str(e))
+                        logger.info(str(e))
                         pass
         return await response.release()
