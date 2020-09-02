@@ -3,9 +3,7 @@ class Translation(object):
     
     
     ┈┈┈••💙✿❤️✿💚••┈┈┈
-AnyDLclone bot created by @shreevish
-
-For more updates☛ @myTestBotz"""
+AnyDLclone bot created by @shreevish"""
     RENAME_403_ERR = "Sorry. You Are Not Permitted To Rename This File."
     ABS_TEXT = " Please Don't Be Selfish."
     UPGRADE_TEXT = "Contact @shreevish"
@@ -13,11 +11,11 @@ For more updates☛ @myTestBotz"""
     SET_CUSTOM_USERNAME_PASSWORD = """If you want to download premium videos, provide in the following format:
 URL | filename | username | password"""
     NOYES_URL = "@robot URL detected. Please use https://shrtz.me/PtsVnf6 and get me a fast URL so that I can upload to Telegram, without me slowing down for other users."
-    DOWNLOAD_START = "trying to download"
-    UPLOAD_START = "trying to upload"
+    DOWNLOAD_START = "Analysing The Link"
+    UPLOAD_START = "Your File Is Uploading As TG video/File"
     RCHD_BOT_API_LIMIT = "size greater than maximum allowed size (50MB). Neverthless, trying to upload."
     RCHD_TG_API_LIMIT = "Downloaded in {} seconds.\nDetected File Size: {}\nSorry. But, I cannot upload Files Greater Than 2.0 GB Due to Telegram API limitations."
-    AFTER_SUCCESSFUL_UPLOAD_MSG = "Follow Our Bots @HB4All_Bot"
+    AFTER_SUCCESSFUL_UPLOAD_MSG = "Follow Our Bots @"allmovierockers
     AFTER_SUCCESSFUL_UPLOAD_MSG_WITH_TS = "Downloaded in {} seconds. \nUploaded in {} seconds."
     NOT_AUTH_USER_TEXT = "@HB4All_Bot"
     NOT_AUTH_USER_TEXT_FILE_SIZE = "Detected File Size: {}. Free Users can only upload: {}\nIf you Think This is a bug, please contact <a href='https://t.me/shreevish?start=true'>@shreevish</a>"
@@ -33,7 +31,7 @@ URL | filename | username | password"""
 --------
 Telegram ID: <code>{}</code>
 Plan name: No Plan
-Expires on: {}"""
+Expires on: {}"Unlimited""
     HELP_USER = """There Are Multiple Things I can do:
 👉 Download Youtube Videos And All Direct Link Also With Custom File Name ( Link | Filename.NameOfExtension )
 👉 Upload As File From Any HTTP link, With Custom Thumbnail Support( Link | Filename.NameOfExtension )
@@ -43,6 +41,7 @@ Expires on: {}"""
 👉 Trim Large Videos Reply To File As /Trim hh:mm:ss hh:mm:ss , And Take Screenshotsof Telegram Media Files Reply To File As /Trim hh:mm:ss 
 👉 Extract Compressed Telegram Media Reply To File As /unzip Reply To File</a>
 👉 Get A Telegram Sticker As Telegram Downloadable Media Simple Send Sticker It Will Generate
+👉 Generate Custom Thumbnail as /generatecustomthumbnail
 --------
 Send /me to know current plan details"""
     REPLY_TO_DOC_GET_LINK = "Reply to a Telegram media to get High Speed Direct Download Link"
@@ -60,7 +59,7 @@ Send /me to know current plan details"""
     ERR_ONLY_TWO_MEDIA_IN_ALBUM = "Media Album should contain only two photos. Please re-send the media album, and then try again, or send only two photos in an album."
     INVALID_UPLOAD_BOT_URL_FORMAT = "URL format is incorrect. make sure your url starts with either http:// or https://. You can set custom file name using the format link | file_name.extension"
     ABUSIVE_USERS = "You are not allowed to use this bot. If you think this is a mistake, please check /me to remove this restriction."
-    FF_MPEG_RO_BOT_AD_VER_TISE_MENT = "https://telegram.dog/FFMpegRoBot"
+    FF_MPEG_RO_BOT_AD_VER_TISE_MENT = "https://telegram.dog/shreevish"
     EXTRACT_ZIP_INTRO_ONE = "Send a compressed file first, Then reply /unzip command to the file."
     EXTRACT_ZIP_INTRO_THREE = "Analyzing received file. ⚠️ This might take some time. Please be patient. "
     UNZIP_SUPPORTED_EXTENSIONS = ("zip", "rar")
